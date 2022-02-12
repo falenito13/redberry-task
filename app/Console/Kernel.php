@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('store:covid-statistics')->hourly();
+        $schedule->command('store:covid-statistics')->everyMinute();
     }
 
     /**

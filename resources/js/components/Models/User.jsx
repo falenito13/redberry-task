@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class User {
 
     constructor() {
@@ -5,35 +7,25 @@ class User {
     }
 
     init() {
-        this.name = localStorage.getItem('userName')
-        this.email = localStorage.getItem('userEmail')
-        this.loggedIn = localStorage.getItem('userLoggedIn')
+        this.user = localStorage.getItem('user')
+        this.token = localStorage.getItem('userToken')
     }
 
-    /**
-     *
-     * @param data object
-     * @param data.name string
-     * @param data.email string
-     * @param callback function
-     */
     authenticated(data, callback) {
-        localStorage.setItem('userName', data.name)
-        localStorage.setItem('userEmail', data.email)
-        localStorage.setItem('userLoggedIn', true)
-
+        localStorage.setItem('user', JSON.stringify(data.user))
+        localStorage.setItem('userToken', data.token)
         this.init()
-
         callback()
     }
 
-    /**
-     *
-     * @return {boolean}
-     */
-    isLoggedIn() {
-        return Boolean(this.loggedIn) === true
+    logout(callback) {
+        localStorage.removeItem('user')
+        localStorage.removeItem('userToken')
+        this.init();
+        callback();
     }
+
 }
 
 export default new User()
+

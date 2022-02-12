@@ -41,6 +41,7 @@ class CovidStatistics extends Command
     public function handle()
     {
         $countries = Http::accept('application/json')->get('https://devtest.ge/countries')->json();
+        Statistic::truncate();
         foreach($countries as $country){
             $data = Country::firstOrCreate(
                 ['code' => $country['code']],
@@ -48,11 +49,12 @@ class CovidStatistics extends Command
             $countryStatistics = Http::post('https://devtest.ge/get-country-statistics',[
                 'code' => $data->code
             ])->json();
+
             Statistic::create([
                 'country_id' => $data->id,
-                'confirmed' => isset($countryStatistics['confirmed']) ?: null,
-                'recovered' => isset($countryStatistics['recovered']) ?: null,
-                'death' => isset($countryStatistics['deaths']) ?: null
+                'confirmed' => $countryStatistics ? $countryStatistics['confirmed'] : null,
+                'recovered' => $countryStatistics? $countryStatistics['recovered'] : null,
+                'death' => $countryStatistics ? $countryStatistics['deaths'] : null
             ]);
         }
     }

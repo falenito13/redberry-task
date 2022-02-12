@@ -6,6 +6,7 @@ const Routers = () => {
     const routes = routesMap
     return (
         <Routes>
+            <Route path='/:lang'>
             {routes.map(({path, component, exact, layout}, key) => {
                 const Layout = layout;
                 const Component = component
@@ -18,6 +19,7 @@ const Routers = () => {
                     </Route>
                 )
             })}
+            </Route>
         </Routes>
     )
 }

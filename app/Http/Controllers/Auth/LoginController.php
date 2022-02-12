@@ -14,7 +14,7 @@ class LoginController extends Controller
     public function authenticate(LoginRequest $request)
     {
         if(Auth::attempt($request->validated())) {
-            return response(auth()->user()->createToken('API Token')->plainTextToken,200);
+            return response(['token' => auth()->user()->createToken('API Token')->plainTextToken],200);
         }
         else {
             return response(['auth' => ['Credentials not match']]);

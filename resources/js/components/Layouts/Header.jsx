@@ -6,7 +6,7 @@ export default function Header(props){
         <div className={'w-screen'}>
         <div className={'w-screen h-20 font-inter'}>
             <NavLink to={'/login'}>
-            <p className={'py-4.5 pl-27 text-custom-green'}>Project</p>
+            <p className={'py-4.5 pl-6 sm:pl-27 text-custom-green'}>Project</p>
             </NavLink>
         </div>
     {props.children}

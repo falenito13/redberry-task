@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Redberry User',
             'email' => 'user@redberry.international',
-            'password' => Hash::make('gmZqY.2Ed^_23LAqB')
+                'password' => Hash::make('gmZqY.2Ed^_23LAqB')
         ]);
     }
 }
