@@ -21,3 +21,5 @@ package-lock.json
 .editorconfig
 .styleci.yml
 /storage/*/
+rr
+.rr.yaml

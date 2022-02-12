@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router} from "react-router-dom";
-import Route from './routes/Index'
-import "react-datepicker/dist/react-datepicker.css"
-import 'react-datepicker/dist/react-datepicker-cssmodules.min.css'
+import Route from './Routes/Index'
 function App() {
 
     return (
