@@ -17,9 +17,9 @@ use App\Http\Controllers\StatisticController;
 
 Route::post('/login',[LoginController::class,'authenticate']);
 Route::middleware('auth:sanctum')->group(function(){
-    Route::prefix('statistics')->group(function(){
-        Route::get('/',[StatisticController::class,'index']);
-        Route::get('/summary',[StatisticController::class,'summaryStatisticData']);
+    Route::controller(StatisticController::class)->prefix('statistics')->group(function(){
+        Route::get('/','index');
+        Route::get('/summary','summaryStatisticData');
     });
     Route::post('/logout',[LoginController::class,'logout']);
 });
