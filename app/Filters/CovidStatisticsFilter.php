@@ -32,8 +32,8 @@ class CovidStatisticsFilter extends QueryFilters
     public function search_keyword($search_keyword)
     {
         return $this->builder->where(function ($query) use ($search_keyword) {
-            return $query->where('confirmed', 'like', "%" . $search_keyword . "%")->orWhere('recovered', "%" . $search_keyword . "%")
-                ->orWhere('death', "%" . $search_keyword . "%")->orWhereHas('countries', function ($query) use ($search_keyword) {
+            return $query->where('confirmed',$search_keyword)->orWhere('recovered',$search_keyword)
+                ->orWhere('death',$search_keyword)->orWhereHas('countries', function ($query) use ($search_keyword) {
                     return $query->where('name', 'like', "%" . $search_keyword . "%")->orWhere('code', 'like', "%" . $search_keyword . "%");
                 });
         });
