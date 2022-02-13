@@ -7,6 +7,7 @@ import WHOLogo from '../Assets/who.png'
 import AxiosInstance from "../Hooks/AxiosInstance";
 import User from "../Models/User";
 import {useTranslation} from 'react-i18next';
+import Logout from '../Assets/logout.png'
 
 export default function Header(props) {
     const {lang} = useParams();
@@ -34,9 +35,9 @@ export default function Header(props) {
 
     return (
         <div className={'flex justify-center w-full flex-col'}>
-            <div className={'flex w-full px-4 w-screen justify-between h-20 font-inter mb-8 items-center bg-gray-100'}>
-                <NavLink to={'/login'}>
-                    <img className="w-48" src={WHOLogo} alt="WHO Logo"/>
+            <div className={'px-4 w-screen flex justify-between h-20 font-inter mb-8 items-center bg-gray-100'}>
+                <NavLink to={`/${lang}/dashboard`}>
+                    <img className="max-w-logo" src={WHOLogo} alt="WHO Logo"/>
                 </NavLink>
                 <div className={'flex'}>
                     <Select options={languageOptions}
@@ -49,8 +50,7 @@ export default function Header(props) {
                             }
                             id={'language-change'} onChange={(e) => changeLanguage(e)}/>
                     {User.isLoggedIn() &&
-                        <button className={'ml-2 px-4 py-2 bg-custom-red rounded-xl text-white'} onClick={logout}>{t('logout')}
-                        </button>
+                        <img src={Logout} className={'w-10 ml-2'} onClick={logout} />
                     }
                 </div>
             </div>

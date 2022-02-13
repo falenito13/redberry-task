@@ -27,6 +27,9 @@ module.exports = {
         },
         borderRadius : {
             '4xl' : '28px'
+        },
+        maxWidth : {
+            'logo' : '128px'
         }
     },
   },

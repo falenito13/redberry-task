@@ -89,8 +89,6 @@ export const selectLanguageStyles = {
     control: base => ({
             ...base,
             display : 'flex',
-            maxWidth : '150px',
-            float : 'right',
             backgroundColor: '#1013EF',
             color: '#FFFFFF',
             textAlign: 'center',
@@ -100,7 +98,6 @@ export const selectLanguageStyles = {
     ),
     menu: (base) => ({
         ...base,
-        maxWidth: "150px",
     }),
     singleValue : base => ({
         ...base,

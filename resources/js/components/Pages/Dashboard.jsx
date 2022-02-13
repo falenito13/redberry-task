@@ -65,10 +65,10 @@ export default function Dashboard() {
     return (
         <>
             <div className="flex flex-col w-full">
-                <h3 className={'text-2xl font-bold flex justify-center ml-8'}>{t('statistic')} COVID-19</h3>
-                <div className={'flex items-center w-screen flex-col sm:flex-row sm:justify-center'}>
+                <h3 className={'text-2xl font-bold flex justify-center'}>{t('statistic')} COVID-19</h3>
+                <div className={'flex items-center flex-col sm:flex-row sm:justify-center'}>
                     <div className={'max-w-md flex items-center ml-32'}>
-                        <img src={CovidLogo} className={'outline-0 w-32 mr-8'}/>
+                        <img src={CovidLogo} className={'outline-0 w-32 '}/>
                         <ul className={'list-disc'}>
                             <li className={'text-custom-green'}>{t('recovered')} : {statisticRecovered}</li>
                             <li className={'text-whitespace-nowrap text-custom-blue text-md'}>{t('confirmed')} : {statisticConfirmed}</li>

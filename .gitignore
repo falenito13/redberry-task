@@ -20,6 +20,5 @@ package-lock.json
 /public/mix-manifest.json
 .editorconfig
 .styleci.yml
-/storage/*/
 rr
 .rr.yaml

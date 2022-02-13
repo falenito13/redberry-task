@@ -6,6 +6,7 @@ use App\Models\Country;
 use App\Models\Statistic;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\RateLimiter;
 
 class CovidStatistics extends Command
 {
@@ -40,13 +41,14 @@ class CovidStatistics extends Command
      */
     public function handle()
     {
+        if (RateLimiter::remaining('store:covid-statistics',$perMinute = 5)){
         $countries = Http::accept('application/json')->get('https://devtest.ge/countries')->json();
         Statistic::truncate();
-        foreach($countries as $country){
+        foreach ($countries as $country) {
             $data = Country::firstOrCreate(
                 ['code' => $country['code']],
                 ['name' => json_encode($country['name'])]);
-            $countryStatistics = Http::post('https://devtest.ge/get-country-statistics',[
+            $countryStatistics = Http::post('https://devtest.ge/get-country-statistics', [
                 'code' => $data->code
             ])->json();
 
@@ -57,5 +59,6 @@ class CovidStatistics extends Command
                 'death' => $countryStatistics['deaths']
             ]);
         }
+    }
     }
 }
