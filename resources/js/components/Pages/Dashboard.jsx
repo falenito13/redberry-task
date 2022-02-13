@@ -142,10 +142,10 @@ export default function Dashboard() {
                                                 <div className="text-sm text-gray-900">{statistic.country.code}</div>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">{statistic.confirmed}</div>
+                                                <div className="text-sm text-gray-900">{statistic.recovered}</div>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">{statistic.recovered}</div>
+                                                <div className="text-sm text-gray-900">{statistic.confirmed}</div>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">{statistic.death}</div>
