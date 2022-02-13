@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Filters\CovidStatisticsFilter;
 use App\Http\Resources\StatisticResource;
 use App\Models\Statistic;
-use Illuminate\Http\Request;
 
 class StatisticController extends Controller
 {
@@ -21,6 +19,7 @@ class StatisticController extends Controller
         $sumOfDeath = Statistic::sum('death');
         $sumOfRecovered = Statistic::sum('recovered');
         $sumOfConfirmed = Statistic::sum('confirmed');
+
         return response([
             'sum_of_death' => $sumOfDeath,
             'sum_of_recovered' => $sumOfRecovered,

@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router, useParams} from "react-router-dom";
 import Route from './Routes/Index'
 import './i18n';
 
 function App() {
-
     return (
-        <Route />
+        <Route/>
     )
 }
 

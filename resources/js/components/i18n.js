@@ -1,9 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// the translations
-// (tip move them in a JSON file and import them,
-// or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
     en: {
         translation: {
@@ -16,7 +13,15 @@ const resources = {
             ascDesc : 'ASC/DESC',
             asc : 'Ascending',
             desc : 'Descending',
-            search : 'Search...'
+            search : 'Search...',
+            logout : 'Log out',
+            english : 'English',
+            georgian : 'Georgian',
+            statistic : 'Statistic of',
+            fill_required_fields : 'Fill in required fields to sign in',
+            email : 'Email',
+            password : 'Password',
+            login : 'Log In'
         }
     },
     ka: {
@@ -30,25 +35,31 @@ const resources = {
             ascDesc : 'ზრდ/კლბ',
             asc : 'ზრდადობით',
             desc : 'კლებადობით',
-            search : 'ძებნა...'
+            search : 'ძებნა...',
+            logout : 'გამოსვლა',
+            english : 'ინგლისური',
+            georgian : 'ქართული',
+            statistic : 'სტატისტიკა',
+            fill_required_fields : 'ავტორიზაციისთვის შეავსეთ მოცემული ველები',
+            email : 'Email',
+            password : 'პაროლი',
+            login : 'შესვლა'
         }
     }
 };
 
 i18n
-    .use(initReactI18next) // passes i18n down to react-i18next
+    .use(initReactI18next)
     .init({
         resources,
-        lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
-        // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
-        // if you're using a language detector, do not define the lng option
+        lng: "en",
         detection: {
             order: ['path'],
             lookupFromPathIndex: 0,
             checkWhitelist: true
         },
         interpolation: {
-            escapeValue: false // react already safes from xss
+            escapeValue: false
         }
     });
 

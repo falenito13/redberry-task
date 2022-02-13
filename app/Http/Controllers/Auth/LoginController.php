@@ -17,7 +17,7 @@ class LoginController extends Controller
             return response(['token' => auth()->user()->createToken('API Token')->plainTextToken],200);
         }
         else {
-            return response(['auth' => ['Credentials not match']]);
+            return response(['auth' => [__('Credentials not match')]]);
         }
     }
 
