@@ -1,9 +1,9 @@
-Run these commands :
-                    composer install 
-                    npm install
-                    php artisan key:generate
-                    php artisan migrate --seed
-                    php artisan octane:start
-                    npm run dev
-                    php artisan serve
+Run these commands :<br />
+                    composer install <br/>
+                    npm install <br />
+                    php artisan key:generate <br />
+                    php artisan migrate --seed <br />
+                    php artisan octane:start <br />
+                    npm run dev <br />
+                    php artisan serve <br />
                    
