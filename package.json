@@ -30,7 +30,11 @@
         "tailwindcss": "^3.0.22"
     },
     "dependencies": {
+        "flag-icons": "^6.1.1",
+        "i18next": "^21.6.11",
+        "lodash.debounce": "^4.0.8",
         "react-hook-form": "^7.27.0",
+        "react-i18next": "^11.15.4",
         "react-router-dom": "^6.2.1",
         "react-select": "^5.2.2"
     }

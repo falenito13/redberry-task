@@ -1,10 +1,15 @@
 export const selectRecoveredStyles = {
     control: base => ({
             ...base,
-            maxWidth : '160px',
+            maxWidth : '350px',
             backgroundColor: '#10EF7C',
             color: '#010414',
             textAlign: 'center',
+            border: 0,
+            boxShadow: 'none',
+            "&:hover": {
+                backgroundColor : '#25b82d'
+            }
         }
     ),
     singleValue : base => ({
@@ -25,10 +30,15 @@ export const selectRecoveredStyles = {
 export const selectConfirmedStyles = {
     control: base => ({
             ...base,
-            maxWidth : '160px',
+            maxWidth : '350px',
             backgroundColor: '#1013EF',
             color: '#FFFFFF',
             textAlign: 'center',
+            border: 0,
+            boxShadow: 'none',
+            "&:hover": {
+                backgroundColor : '#301ea6'
+            }
         }
     ),
     dropdownIndicator: base => ({
@@ -49,10 +59,15 @@ export const selectConfirmedStyles = {
 export const selectDeathStyles = {
     control: base => ({
             ...base,
-            maxWidth : '160px',
+            maxWidth : '350px',
             backgroundColor: '#FA1B1B',
             color: '#FFFFFF',
             textAlign: 'center',
+            border: 0,
+            boxShadow: 'none',
+            "&:hover": {
+                backgroundColor : '#a62626'
+            }
         }
     ),
     singleValue : base => ({
