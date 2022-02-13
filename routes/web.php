@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test',[\App\Http\Controllers\StatisticController::class,'summaryStatisticData']);
 Route::get('/{any?}', function () {
     return view('app');
 })->where('any', '^.*$');
