@@ -14,8 +14,12 @@ use App\Http\Controllers\StatisticController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('statistics',[StatisticController::class,'index']);
 
 Route::post('/login',[LoginController::class,'authenticate']);
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->group(function(){
+    Route::prefix('statistics')->group(function(){
+        Route::get('/',[StatisticController::class,'index']);
+        Route::get('/summary',[StatisticController::class,'summaryStatisticData']);
+    });
+    Route::post('/logout',[LoginController::class,'logout']);
 });

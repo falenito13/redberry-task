@@ -18,11 +18,15 @@ class User {
         callback()
     }
 
-    logout(callback) {
+    isLoggedIn(){
+        return localStorage.getItem('userToken');
+    }
+
+    logout(language) {
         localStorage.removeItem('user')
         localStorage.removeItem('userToken')
         this.init();
-        callback();
+        window.location.href = `/${language}/login`
     }
 
 }

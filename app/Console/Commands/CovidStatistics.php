@@ -52,9 +52,9 @@ class CovidStatistics extends Command
 
             Statistic::create([
                 'country_id' => $data->id,
-                'confirmed' => $countryStatistics ? $countryStatistics['confirmed'] : null,
-                'recovered' => $countryStatistics? $countryStatistics['recovered'] : null,
-                'death' => $countryStatistics ? $countryStatistics['deaths'] : null
+                'confirmed' => $countryStatistics['confirmed'],
+                'recovered' => $countryStatistics['recovered'],
+                'death' => $countryStatistics['deaths']
             ]);
         }
     }

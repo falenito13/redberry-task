@@ -20,4 +20,12 @@ class LoginController extends Controller
             return response(['auth' => ['Credentials not match']]);
         }
     }
+
+    public function logout(Request $request)
+    {
+        Auth::user()->tokens()->delete();
+        $request->user()->currentAccessToken()->delete();
+    }
+
+
 }
